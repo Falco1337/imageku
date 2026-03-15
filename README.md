@@ -28,13 +28,13 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 ## Demo
 
 ### Select Screenshot Area
-![Select Area](images/select-area.png)
+![Select Area](images/1.png)
 
 ### Resize or Move Selection
-![Resize Selection](images/resize-selection.png)
+![Resize Selection](images/2.png)
 
 ### Saved Screenshot
-![Saved Screenshot](images/saved.png)
+![Saved Screenshot](images/3.png)
 
 ---
 
