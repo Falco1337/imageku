@@ -73,7 +73,7 @@ pip3 install pillow pynput
 **Linux-specific dependencies** (for ImageGrab support):
 
 ```bash
-sudo apt install python3-tk scrot    # Ubuntu/Debian
+sudo apt install python3-tk scrot    # Ubuntu/Debian/Kali
 sudo pacman -S tk scrot              # Arch Linux
 sudo dnf install python3-tkinter scrot # Fedora
 ```
@@ -90,7 +90,30 @@ python3 imageku.py
 
 ## Better Performance & Autostart
 
-For **faster response**, run Imageku automatically at system startup.
+For **faster response**, run Imageku automatically at system startup.  
+This ensures the keyboard listener is active in the background.
+
+### Linux (Kali / GNOME / XFCE / KDE)
+
+1. Copy `imageku.py` to **root directory**:
+
+```bash
+sudo cp imageku.py /usr/share/kali-themes/imageku.py
+sudo chmod +x /usr/share/kali-themes/imageku.py
+```
+
+2. Open **Keyboard → Application Shortcuts**
+3. Click **Add** or **+**
+4. Set the command to:
+
+```
+/usr/share/kali-themes/imageku.py
+```
+
+5. Assign a trigger (optional: “On login”)
+6. Save
+
+The program will now run automatically at login and listen for **Print Screen** key presses.
 
 ### Windows
 
@@ -101,36 +124,7 @@ shell:startup
 ```
 
 2. Place a shortcut to `imageku.py` in the folder
-3. Optional: rename to `imageku.pyw` to hide console window
-
-### Linux (GNOME / XFCE / KDE)
-
-1. Create autostart folder if it doesn't exist:
-
-```bash
-mkdir -p ~/.config/autostart
-```
-
-2. Create `imageku.desktop`:
-
-```bash
-nano ~/.config/autostart/imageku.desktop
-```
-
-3. Paste the following:
-
-```ini
-[Desktop Entry]
-Type=Application
-Name=Imageku
-Comment=Imageku Snipping Tool
-Exec=python3 /home/<user>/imageku.py
-X-GNOME-Autostart-enabled=true
-```
-
-4. Save and restart your system.
-
-The script will now run in the background and listen for **Print Screen** automatically.
+3. Optional: rename to `imageku.pyw` to hide the console window
 
 ---
 
