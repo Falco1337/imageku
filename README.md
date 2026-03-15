@@ -33,9 +33,6 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 ### Resize or Move Selection
 ![Resize Selection](images/2.png)
 
-### Saved Screenshot
-![Saved Screenshot](images/3.png)
-
 ---
 
 ## How It Works
@@ -66,7 +63,10 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 Install dependencies:
 
 ```bash
-pip install pillow pynput
+pip3 install pillow pynput
+```
+```bash
+sudo apt update && apt upgrade -y
 ```
 
 Python version recommended:
@@ -84,7 +84,12 @@ python3 imageku.py
 ```
 0r
 
-For better performance, can put at **Session and Startup**
+---
+### Better performance,
+
+can put at **Session and Startup**
+
+---
 
 The program will run in the background and listen for the **Print Screen** key.
 
