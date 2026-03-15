@@ -28,10 +28,10 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 ## Demo
 
 ### Select Screenshot Area
-![Select Area](images/1.png)
+![Select Area](imageku/1.png)
 
 ### Resize or Move Selection
-![Resize Selection](images/2.png)
+![Resize Selection](imageku/2.png)
 
 ---
 
