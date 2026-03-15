@@ -1,19 +1,21 @@
-# Imageku
+# Imageku 🖼️
 
-A simple **Python screenshot snipping tool** similar to the Windows Snipping Tool.  
-Press **Print Screen** to capture the screen and select the area you want to save.
+[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-The tool allows you to **draw, move, and resize the selection box before saving**.
+**Imageku** is a lightweight **Python screenshot snipping tool**, similar to the Windows Snipping Tool.  
+Press **Print Screen** to capture your screen and select the area you want to save.  
+The tool allows you to **draw, move, and resize the selection box** before saving.
 
 ---
 
 ## Features
 
-- Capture screenshot using **Print Screen key**
+- Capture screenshots with **Print Screen key**
 - **Fullscreen snipping overlay**
-- **Drag to select screenshot area**
+- **Drag to select capture area**
 - **Move and resize selection box**
-- **8 resize handles (corners + edges)**
+- **8 resize handles** (corners + edges)
 - Save screenshot with **timestamp filename**
 - Automatically saved to:
 
@@ -21,7 +23,8 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 ~/Pictures/imageku/
 ```
 
-- Simple **GUI**
+- Cross-platform support (Windows & Linux)
+- Lightweight **GUI overlay** using Tkinter
 
 ---
 
@@ -38,9 +41,9 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 ## How It Works
 
 1. Press **Print Screen**
-2. A fullscreen screenshot preview appears
+2. Fullscreen screenshot overlay appears
 3. **Drag your mouse** to select the capture area
-4. Adjust the selection if needed:
+4. Adjust the selection:
    - Drag edges/corners to resize
    - Drag center to move
 5. Press **Enter** to save the screenshot
@@ -51,7 +54,7 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 ## Controls
 
 | Key | Action |
-|----|------|
+|-----|--------|
 | `Print Screen` | Start screen capture |
 | `Enter` | Save screenshot |
 | `Esc` | Cancel snipping |
@@ -60,19 +63,19 @@ The tool allows you to **draw, move, and resize the selection box before saving*
 
 ## Requirements
 
-Install dependencies:
+- Python 3.9+
+- Dependencies:
 
 ```bash
 pip3 install pillow pynput
 ```
+
+**Linux-specific dependencies** (for ImageGrab support):
+
 ```bash
-sudo apt update && apt upgrade -y
-```
-
-Python version recommended:
-
-```
-Python 3.9+
+sudo apt install python3-tk scrot    # Ubuntu/Debian
+sudo pacman -S tk scrot              # Arch Linux
+sudo dnf install python3-tkinter scrot # Fedora
 ```
 
 ---
@@ -82,16 +85,52 @@ Python 3.9+
 ```bash
 python3 imageku.py
 ```
-0r
-
----
-### Better performance,
-
-can put at **Session and Startup**
 
 ---
 
-The program will run in the background and listen for the **Print Screen** key.
+## Better Performance & Autostart
+
+For **faster response**, run Imageku automatically at system startup.
+
+### Windows
+
+1. Press `Win + R` and type:
+
+```bash
+shell:startup
+```
+
+2. Place a shortcut to `imageku.py` in the folder
+3. Optional: rename to `imageku.pyw` to hide console window
+
+### Linux (GNOME / XFCE / KDE)
+
+1. Create autostart folder if it doesn't exist:
+
+```bash
+mkdir -p ~/.config/autostart
+```
+
+2. Create `imageku.desktop`:
+
+```bash
+nano ~/.config/autostart/imageku.desktop
+```
+
+3. Paste the following:
+
+```ini
+[Desktop Entry]
+Type=Application
+Name=Imageku
+Comment=Imageku Snipping Tool
+Exec=python3 /home/<user>/imageku.py
+X-GNOME-Autostart-enabled=true
+```
+
+4. Save and restart your system.
+
+The script will now run in the background and listen for **Print Screen** automatically.
 
 ---
 
@@ -100,11 +139,11 @@ The program will run in the background and listen for the **Print Screen** key.
 ```
 project/
 │
-├─ snip.py
+├─ imageku.py
 ├─ README.md
 └─ images/
-   ├─ select-area.png
-   ├─ resize-selection.png
+   ├─ 1.jpg
+   ├─ 2.jpg
    └─ saved.png
 ```
 
@@ -129,9 +168,9 @@ imageku_20260315_142530.png
 ## Built With
 
 - **Tkinter** – GUI overlay
-- **Pillow (PIL)** – image processing
-- **pynput** – keyboard listener
-- **ImageGrab** – screen capture
+- **Pillow (PIL)** – Image processing
+- **pynput** – Keyboard listener
+- **ImageGrab** – Screen capture
 
 ---
 
