@@ -95,23 +95,28 @@ This ensures the keyboard listener is active in the background.
 
 ### Linux (Kali / GNOME / XFCE / KDE)
 
-1. Copy `imageku.py` to **root directory**:
+1. **Installation**:
+
+```git
+git clone https://github.com/Falco1337/imageku.git
+```
+
+2. Copy the script to `/usr/share/kali-themes/` and make it executable:
 
 ```bash
 sudo cp imageku.py /usr/share/kali-themes/imageku.py
 sudo chmod +x /usr/share/kali-themes/imageku.py
 ```
 
-2. Open **Keyboard → Application Shortcuts**
-3. Click **Add** or **+**
-4. Set the command to:
+3. Open **Keyboard → Application Shortcuts**
+4. Click **Add** or **+**
+5. Set the command to:
 
 ```
 /usr/share/kali-themes/imageku.py
 ```
 
-5. Assign a trigger (optional: “On login”)
-6. Save
+6. Assign a trigger (optional: “On login”) and save
 
 The program will now run automatically at login and listen for **Print Screen** key presses.
 
